@@ -10,4 +10,8 @@
 		AllowOverride all
 		Require all granted
 	</Directory>
+
+	<IfModule mod_dir.c>
+		DirectoryIndex index.php index.html index.cgi index.xhtml index.htm
+	</IfModule>
 </VirtualHost>
