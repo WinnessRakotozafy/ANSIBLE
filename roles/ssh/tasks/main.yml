@@ -2,5 +2,9 @@
 # tasks file for ssh
 
 # Configuration OpenSSH
-- hosts: allservers
+- name: Configuration du service SSH
+  template:
+    src: sshd_config.j2
+    dest: /etc/ssh/sshd_config
+    mode: 644
 
