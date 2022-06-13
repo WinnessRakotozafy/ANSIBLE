@@ -5,8 +5,4 @@
     src: /etc/ansible/roles/ssh/templates/sshd_config.j2
     dest: /etc/ssh/sshd_config
     mode: 0644
-
-- name: Redémarrage du service SSH
-  service:
-    name: ssh
-    state: restarted
+  notify: "Restart SSH"
