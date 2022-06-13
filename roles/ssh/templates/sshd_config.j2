@@ -8,10 +8,17 @@ PasswordAuthentication no
 
 #Autorisation de la connexion par clé publique
 PubkeyAuthentication yes
-AuthorizedKeysFile	.ssh/authorized_keys
+AuthorizedKeysFile	.ssh/authorized_keys .ssh/authorized_keys2
 
 #Activer le port par défaut pour SSH
 Port 22
 
 #Autoriser l'accès uniquement au groupe utilisateur sshusers
 AllowGroups sshusers
+
+#Activation des logs
+LogLevel INFO
+
+#Autoriser le Sub-server ftp pour le transfert des fichiers de configuration sur le réseau
+
+Subsystem sftp/usr/lib/ssh/sftp-server
