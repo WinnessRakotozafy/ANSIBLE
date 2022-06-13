@@ -4,13 +4,23 @@
   apt:
     name: ufw
 
-- name: Application des règles par défaut et des logs
-  ufw:
-    state: enabled 
-    log: yes
-
-- name: Autoriser les accès à certains ports
+- name: Autoriser les accès au port http
   ufw:
     rule: allow
-    port: ['80','22','443']
+    port: '80'
     proto: tcp
+    log: yes
+
+- name: Autoriser les accès au port ssh
+  ufw:
+    rule: allow
+    port: '22'
+    proto: tcp
+    log: yes
+
+- name: Autoriser les accès au port https
+  ufw:
+    rule: allow
+    port: '443'
+    proto: tcp
+    log: yes
