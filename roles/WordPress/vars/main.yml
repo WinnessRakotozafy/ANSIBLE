@@ -3,7 +3,7 @@
 mysql_root_password: "P@ssw0rd"
 mysql_user: "admin"
 mysql_password: "P@ssw0rd"
-mysql_dbname: "wp_db"
+mysql_db: "wp_db"
 db_host: "127.0.0.1"
 webserver_host: "127.0.0.1"
 

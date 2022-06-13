@@ -18,5 +18,21 @@
     src: wp-config.php.j2
     dest: "/var/www/html/wordpress/wp-config.php"
 
+- name: Création de la base de données pour WordPress
+  mysql_db:
+    name: "{{ mysql_db }}"
+    state: present
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+
+- name: Création de l'utilisateur ayant les pleins droits sur la BDD
+  mysql_user:
+    name: "{{ mysql_user }}"
+    password: "{{ mysql_password }}"
+    priv: "{{ mysql_db }}".*:ALL"
+    state: present
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+
   notify: restart apache
 
