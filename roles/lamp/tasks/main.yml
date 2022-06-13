@@ -1,2 +1,23 @@
 ---
 # tasks file for lamp
+# Installation Apache
+- name: Installation Apache
+  apt:
+    name:
+      - apache2
+      - libapache2-mod-php
+    state: latest
+
+- name: Installation PHP
+  apt:
+    name:
+      - php
+    state: latest
+
+- name: Installation MySQL
+  apt:
+    name:
+      - mysql-server
+    state: latest
+
+
