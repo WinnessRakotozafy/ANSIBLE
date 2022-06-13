@@ -34,5 +34,14 @@
     login_user: root
     login_password: "{{ mysql_root_password }}"
 
+- name: Donner les propriétés de wordpress à www-data
+  file:
+    path: "/var/www/html/wordpress"
+    state: directory
+    recurse: yes
+    owner: "www-data"
+    group: "www-data"
+    mode: 0755
+
   notify: restart apache
 
