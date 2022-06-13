@@ -4,7 +4,11 @@
   apt:
     name: fail2ban
     state: latest
+
 - name: Configuration paramètre de sécurité de base Fail2Ban
   template:
     src: fail2ban.conf.j2
     dest: /etc/fail2ban/jail.d/defaults-debian.conf
+    mode: 0644
+    notify: "Restart Fail2Ban"
+
