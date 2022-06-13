@@ -2,6 +2,9 @@
 - hosts: allservers
   roles:
     - ssh
-    - fail2ban
     - ufw
+    - fail2ban
+
   become: yes
+  become_user: root
+  become_method: sudo

@@ -3,11 +3,10 @@
 - name: Installation UFW (Configuration de pare-geu)
   apt:
     name: ufw
-    state: latest
 
 - name: Application des règles par défaut et des logs
   ufw:
-    state: present
+    state: enabled 
     log: yes
 
 - name: Autoriser les accès à certains ports
