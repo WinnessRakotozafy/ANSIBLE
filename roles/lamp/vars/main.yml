@@ -1,2 +1,8 @@
 ---
 # vars file for lamp
+mysql_user: "admin"
+mysql_password: "P@ssw0rd"
+mysql_dbname: "appDB"
+db_host: "127.0.0.1"
+webserver_host: "127.0.0.1"
+
