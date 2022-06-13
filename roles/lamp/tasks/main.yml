@@ -12,6 +12,15 @@
     name:
       - php-common
       - php-mysql
+      - php-curl
+      - php-gd
+      - php-mbstring
+      - php-xml
+      - php-xmlrpc
+      - php-intl
+      - php-zip
+      - php-bz2
+      - php-fileinfo
 
 - name: Installation MySQL
   apt:
@@ -32,5 +41,25 @@
     group: "www-data"
     mode: 0755
 
+- name: Configuration de MySQL
+  mysql_user:
+    name: root
+    password: "{{ mysql_root_password }}"
+    login_unix_socket: /var/run/mysqld/mysqld.sock
+
+- name: Enlever les utilisateurs anonymes de la base de données
+  mysql_user:
+    name: ''
+    host_all: yes
+    state: absent
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
+
+- name: Enlever la BDD test de MySQL
+  mysqldb:
+    name: test
+    state: absent
+    login_user: root
+    login_password: "{{ mysql_root_password }}"
 
 

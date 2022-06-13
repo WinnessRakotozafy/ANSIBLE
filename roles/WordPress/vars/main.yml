@@ -1,6 +1,6 @@
 ---
 # vars file for lamp
-root_password: "P@ssw0rd"
+mysql_root_password: "P@ssw0rd"
 mysql_user: "admin"
 mysql_password: "P@ssw0rd"
 mysql_dbname: "wp_db"
