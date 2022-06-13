@@ -1,2 +1,17 @@
 ---
 # tasks file for WordPress
+- name: Télécharger et extraire la dernière version WordPresss
+  unarchive:
+    src: https://wordpress.org/latest.tar.gz
+    dest: "/var/www/html"
+    remote_src: yes
+    creates: "/var/www/html/wordpress"
+
+- name: Configuration wp-config
+  template:
+    src: wp-config.php.j2
+    dest: "/var/www/html/wordpress/wp-config.php"
+
+  notify: reload apache
+  notify: restart apache
+
