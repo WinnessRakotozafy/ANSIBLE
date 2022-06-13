@@ -1,10 +1,7 @@
 ---
 # tasks file for ssh
-
-# Configuration OpenSSH
-- name: Configuration du service SSH
+- name: Configuration SSH
   template:
-    src: sshd_config.j2
+    src: /etc/ansible/roles/ssh/templates/sshd_config.j2
     dest: /etc/ssh/sshd_config
-    mode: 644
-
+    mode: 0644
