@@ -57,7 +57,7 @@
     login_password: "{{ mysql_root_password }}"
 
 - name: Enlever la BDD test de MySQL
-  mysqldb:
+  mysql_db:
     name: test
     state: absent
     login_user: root
