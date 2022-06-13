@@ -17,12 +17,12 @@
 
 # Ex 2: A collection of hosts belonging to the 'webservers' group:
 
-[webservers]
-## alpha.example.org
-## beta.example.org
+[allservers]
 192.168.0.26 ansible_user=unknwnuser
-#127.0.0.1 ansible_user=unknwnuser
+127.0.0.1 ansible_user=unknwnuser
 
+[webservers]
+192.168.0.26 ansible_user=unknwnuser
 # If you have multiple hosts following a pattern, you can specify
 # them like this:
 
