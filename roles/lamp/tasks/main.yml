@@ -17,11 +17,10 @@
   apt:
     name:
       - mysql-server
-      - python-mysqldb
 
 - name: Modification du fichier vhost par défaut Apache 
   template:
     src: vhost.conf.j2
-    dest: /etc/apache/sites-available/000-default.conf
+    dest: /etc/apache2/sites-available/000-default.conf
 
 

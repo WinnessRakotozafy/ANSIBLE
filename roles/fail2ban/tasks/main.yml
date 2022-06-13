@@ -10,5 +10,5 @@
     dest: /etc/fail2ban/jail.d/defaults-debian.conf
     mode: 0644
 
-  notify: "Restart fail2ban"
+  notify: "restart fail2ban"
 
