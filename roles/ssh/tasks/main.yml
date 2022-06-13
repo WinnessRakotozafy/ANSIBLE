@@ -2,4 +2,5 @@
 # tasks file for ssh
 
 # Configuration OpenSSH
-- hosts
+- hosts: allservers
+
