@@ -24,3 +24,11 @@
     port: '443'
     proto: tcp
     log: yes
+
+- name: Autoriser les ports pour MySQL
+  ufw:
+    rule: allow
+    port: '3306'
+    proto: tcp
+    log: yes
+

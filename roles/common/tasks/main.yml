@@ -20,5 +20,14 @@
       - sudo
       - pwgen
       - tree
+# Ajouter l'utilisateur dans le groupe technique sshusers
 
+- name: Création du groupe
+  ansible.builtin.group:
+    name: sshusers
+    state: present
 
+- name: Ajout de l'utilisateur dans le groupe
+  ansible.builtin.user:
+    name: unknwnuser
+    group: sshusers
