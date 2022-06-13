@@ -1,6 +1,6 @@
 ---
 # tasks file for ufw
-- name: Installation UFW (Configuration de pare-geu)
+- name: Installation UFW (Configuration de pare-feu)
   apt:
     name: ufw
 

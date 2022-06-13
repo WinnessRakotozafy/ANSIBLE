@@ -31,16 +31,15 @@
   template:
     src: vhost.conf.j2
     dest: /etc/apache2/sites-available/000-default.conf
-    notify: restart apache
+  notify: restart apache
 
 - name: Donner la propriété du répertoire racine à l'utilisateur www-data
   file:
     path: "/var/www/html"
     state: directory
-    recurse: yes
     owner: "www-data"
     group: "www-data"
-    mode: 0755
+    mode: '0755'
 
 - name: Configuration de MySQL
   mysql_user:
