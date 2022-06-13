@@ -10,7 +10,8 @@
 - name: Installation PHP
   apt:
     name:
-      - php
+      - php-common
+      - php-mysql
 
 - name: Installation MySQL
   apt:
@@ -22,3 +23,5 @@
   template:
     src: vhost.conf.j2
     dest: /etc/apache/sites-available/000-default.conf
+
+
