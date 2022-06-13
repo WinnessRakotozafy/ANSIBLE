@@ -5,8 +5,13 @@
     name: ufw
     state: latest
 
-- name: Application des règles par défaut
-  command: ufw enable
+- name: Application des règles par défaut et des logs
+  ufw:
+    state: present
+    log: yes
 
-- name : Activation des logs de ufw
-  command: ufw logging on
+- name: Autoriser les accès à certains ports
+  ufw:
+    rule: allow
+    port: [80,22,443]
+    proto: tcp

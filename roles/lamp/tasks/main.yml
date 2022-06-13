@@ -17,7 +17,12 @@
 - name: Installation MySQL
   apt:
     name:
-      - mysql-server
+      - mysql-serveri
+      - python-mysqldb
+
     state: latest
+
+- name: Création de la base de données 
+  
 
 
