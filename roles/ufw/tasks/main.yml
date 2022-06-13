@@ -13,5 +13,5 @@
 - name: Autoriser les accès à certains ports
   ufw:
     rule: allow
-    port: [80,22,443]
+    port: ['80','22','443']
     proto: tcp
